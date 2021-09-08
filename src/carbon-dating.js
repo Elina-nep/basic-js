@@ -17,7 +17,23 @@ const HALF_LIFE_PERIOD = 5730;
  * dateSample('WOOT!') => false
  *
  */
-export default function dateSample(/* sampleActivity */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+ function isFloat(n){
+  return Number(n) === n && n % 1 !== 0;
+}
+
+export default function dateSample(sampleActivitySTR) {
+if (typeof sampleActivitySTR == "string") {
+  let sampleActivity = Number(sampleActivitySTR);
+    if ((Number.isInteger(sampleActivity) || isFloat(sampleActivity)) && ((sampleActivity <= MODERN_ACTIVITY) && (sampleActivity > 0))) {
+    
+    let k = 0.693 / HALF_LIFE_PERIOD;
+    let timeLife = Math.ceil((Math.log(MODERN_ACTIVITY/sampleActivity))/k);
+
+    return timeLife;
+
+  }
+ 
+  else return false;}
+  else return false;
+  
 }
