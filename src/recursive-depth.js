@@ -1,4 +1,4 @@
-import { NotImplementedError } from "../extensions/index.js";
+const { NotImplementedError } = require("../extensions/index.js");
 
 /**
  * Implement class DepthCalculator with method calculateDepth

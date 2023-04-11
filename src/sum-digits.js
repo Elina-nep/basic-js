@@ -1,4 +1,4 @@
-import { NotImplementedError } from "../extensions/index.js";
+const { NotImplementedError } = require("../extensions/index.js");
 
 /**
  * Given a number, replace this number with

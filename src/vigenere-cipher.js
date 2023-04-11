@@ -1,4 +1,4 @@
-import { NotImplementedError } from "../extensions/index.js";
+const { NotImplementedError } = require("../extensions/index.js");
 
 /**
  * Implement class VigenereCipheringMachine that allows us to create

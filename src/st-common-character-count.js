@@ -1,4 +1,4 @@
-import { NotImplementedError } from "../extensions/index.js";
+const { NotImplementedError } = require("../extensions/index.js");
 
 /**
  * Given two strings, find the number of common characters between them.
