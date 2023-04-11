@@ -1,4 +1,4 @@
-import { NotImplementedError } from '../extensions/index.js';
+import { NotImplementedError } from "../extensions/index.js";
 
 /**
  * Given matrix, a rectangular matrix of integers,
@@ -16,7 +16,11 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  * The result should be 9
  */
-export default function getMatrixElementsSum(/* matrix */) {
-  throw new NotImplementedError('Not implemented');
+function getMatrixElementsSum(/* matrix */) {
+  throw new NotImplementedError("Not implemented");
   // remove line with error and write your code here
 }
+
+module.exports = {
+  getMatrixElementsSum,
+};

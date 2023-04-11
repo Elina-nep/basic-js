@@ -1,6 +1,6 @@
 import { NotImplementedError } from "../extensions/index.js";
 
-export default {
+const chainMaker = {
   chain_array: [],
   getLength() {
     return this.chain_array.length;
@@ -26,7 +26,7 @@ export default {
       return this;
     } else {
       this.chain_array = [];
-      throw new Error("You can\'t remove incorrect link!");
+      throw new Error("You can't remove incorrect link!");
     }
   },
   reverseChain() {
@@ -34,8 +34,12 @@ export default {
     return this;
   },
   finishChain() {
-    var finalstr = "( " + (this.chain_array).join(" )~~( ") + " )";
+    var finalstr = "( " + this.chain_array.join(" )~~( ") + " )";
     this.chain_array = [];
     return finalstr;
   },
+};
+
+module.exports = {
+  chainMaker,
 };

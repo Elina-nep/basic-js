@@ -13,7 +13,7 @@ import { NotImplementedError } from "../extensions/index.js";
  * createDreamTeam(['Olivia', 1111, 'Lily', 'Oscar', true, null]) => 'LOO'
  *
  */
-export default function createDreamTeam(members) {
+function createDreamTeam(members) {
   if (Array.isArray(members)) {
     let teamName = "";
     let membersNew = [];
@@ -29,10 +29,10 @@ export default function createDreamTeam(members) {
     membersNew = membersNew.sort();
     for (let memberIndex = 0; memberIndex < membersNew.length; memberIndex++) {
       let member = membersNew[memberIndex];
-      
+
       if (typeof member === "string") {
         let FirstLett = member[0];
-        
+
         teamName = teamName + FirstLett;
       }
     }
@@ -41,4 +41,6 @@ export default function createDreamTeam(members) {
   } else return false;
 }
 
-createDreamTeam(["   Amelia", 111, "Lily", "Ruby"]);
+module.exports = {
+  createDreamTeam,
+};

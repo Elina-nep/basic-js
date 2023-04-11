@@ -1,9 +1,9 @@
-import { NotImplementedError } from '../extensions/index.js';
+import { NotImplementedError } from "../extensions/index.js";
 
 /**
  * Given matrix where you have to find cats by ears "^^"
  *
- * @param {Array<Array>} matrix 
+ * @param {Array<Array>} matrix
  * @return {Number} count of cats found
  *
  * @example
@@ -14,24 +14,21 @@ import { NotImplementedError } from '../extensions/index.js';
  * ]) => 3`
  *
  */
-export default function countCats(matrix) {
-  
+function countCats(matrix) {
   let catsNum = 0;
-for (let catsLineindex = 0; catsLineindex < matrix.length; catsLineindex++) {
-  const catsLine = matrix[catsLineindex];
+  for (let catsLineindex = 0; catsLineindex < matrix.length; catsLineindex++) {
+    const catsLine = matrix[catsLineindex];
     for (let catsboxindex = 0; catsboxindex < catsLine.length; catsboxindex++) {
       let catsBox = catsLine[catsboxindex];
-        if (catsBox === '^^') {
-         catsNum ++;
+      if (catsBox === "^^") {
+        catsNum++;
       }
     }
-}
+  }
 
   return catsNum;
 }
 
-countCats([
-  ['##', 'dd', '00'],
-  ['^^', '..', 'ss'],
-  ['AA', 'dd', 'Oo'],
-]);
+module.exports = {
+  countCats,
+};

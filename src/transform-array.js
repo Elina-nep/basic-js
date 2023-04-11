@@ -13,11 +13,11 @@ import { NotImplementedError } from "../extensions/index.js";
  * transform([1, 2, 3, '--discard-prev', 4, 5]) => [1, 2, 4, 5]
  *
  */
-export default function transform(arr) {
+function transform(arr) {
   if (!Array.isArray(arr)) {
     throw new Error("'arr' parameter must be an instance of the Array!");
   }
-  if ((arr == [])) {
+  if (arr == []) {
     return [];
   }
   var arr2 = arr.slice();
@@ -25,13 +25,15 @@ export default function transform(arr) {
     if (typeof arr2[i] == "string") {
       switch (arr2[i]) {
         case "--discard-next":
-          if (i == arr2.length-1) {
-
+          if (i == arr2.length - 1) {
             arr2.splice(i, 1);
             i = i - 1;
             break;
           }
-          if ((arr2[i+2] == "--discard-prev")||(arr2[i+2] == "--double-prev")) {
+          if (
+            arr2[i + 2] == "--discard-prev" ||
+            arr2[i + 2] == "--double-prev"
+          ) {
             arr2.splice(i, 3);
             i = i - 1;
             break;
@@ -49,7 +51,7 @@ export default function transform(arr) {
           i = i - 1;
           break;
         case "--double-next":
-          if (i == arr2.length-1) {
+          if (i == arr2.length - 1) {
             arr2.splice(i, 1);
             i = i - 1;
             break;
@@ -73,3 +75,7 @@ export default function transform(arr) {
   }
   return arr2;
 }
+
+module.exports = {
+  transform,
+};
